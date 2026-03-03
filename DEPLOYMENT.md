@@ -56,6 +56,19 @@ On the "Set up builds and deployments" screen:
 
 Click **Save and Deploy**
 
+### Important: Deploy Command Setting
+
+For a Git-connected Cloudflare Pages project, you should **not** set a custom deploy command.
+
+- Leave deploy command empty in Cloudflare Pages settings.
+- Cloudflare Pages will deploy the built `_site` output automatically after `npm run build`.
+
+If you do set a deploy command manually, use the Pages command (not Worker deploy):
+
+```bash
+npx wrangler pages deploy _site --project-name sheltered-gaming
+```
+
 ## Step 3: Verify Deployment
 
 1. Cloudflare will trigger a build automatically
@@ -135,6 +148,7 @@ Check the build logs in the Cloudflare dashboard:
    - Missing npm dependencies (run `npm install` locally to test)
    - Placeholder values not replaced (check `src/games/` files)
    - Typos in frontmatter (must be valid YAML)
+   - `npx wrangler deploy` is configured as deploy command (this is Worker deploy and will fail for Pages)
 
 ### Changes not appearing after push
 

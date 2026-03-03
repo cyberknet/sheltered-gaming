@@ -1,13 +1,5 @@
 name = "sheltered-gaming"
-type = "javascript"
-compatibility_date = "2024-01-01"
+compatibility_date = "2026-03-03"
 
-[tool.build]
-command = "npm run build"
-cwd = "./"
-watch_paths = ["src/**"]
-
-[env.production]
-name = "sheltered-gaming"
-route = "sheltered-gaming.com/*"
-zone_name = "sheltered-gaming.com"
+[assets]
+directory = "./_site"

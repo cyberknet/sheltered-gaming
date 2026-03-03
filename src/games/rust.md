@@ -1,7 +1,7 @@
 ---
 layout: layouts/game-page.html
 title: Rust Server
-description: Join our Rust server for intense PvP and survival gameplay
+description: Join our Rust server for survival gameplay and PvE Collaboration
 permalink: /games/rust/
 serverIp: "rust.shelteredgaming.com"
 serverName: "Sheltered Rust"

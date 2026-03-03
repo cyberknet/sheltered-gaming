@@ -1,0 +1,414 @@
+/* ===== Root Variables ===== */
+:root {
+  --primary-dark: #0a0e27;
+  --secondary-dark: #1a1f3a;
+  --tertiary-dark: #2a2f4a;
+  --accent-rgb: #ff006e;
+  --accent-green: #00d9ff;
+  --accent-purple: #b537f2;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-color: #3a3f5a;
+}
+
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-dark);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+}
+
+/* ===== Navigation ===== */
+.navbar {
+  background-color: var(--secondary-dark);
+  border-bottom: 2px solid var(--accent-rgb);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-logo a:hover {
+  color: var(--accent-rgb);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--accent-rgb);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-rgb);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===== Container & Layout ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-rgb);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-green);
+}
+
+/* ===== Home Page - Game Cards Grid ===== */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.game-card {
+  background-color: var(--secondary-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-rgb);
+  box-shadow: 0 10px 30px rgba(255, 0, 110, 0.2);
+}
+
+.game-card h3 {
+  color: var(--accent-rgb);
+  margin-bottom: 1rem;
+}
+
+.game-card p {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.game-card-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent-rgb), var(--accent-purple));
+  color: white;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.game-card-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 0, 110, 0.4);
+}
+
+/* ===== Game Page ===== */
+.game-page {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-header {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.game-header h1 {
+  color: var(--accent-rgb);
+  margin-bottom: 0.5rem;
+}
+
+.game-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.game-content {
+  background-color: var(--secondary-dark);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--accent-green);
+}
+
+.game-content h3 {
+  color: var(--accent-green);
+  margin-top: 1.5rem;
+}
+
+.game-content h3:first-child {
+  margin-top: 0;
+}
+
+/* ===== Server Info Section ===== */
+.server-info-section {
+  margin: 3rem 0;
+}
+
+.server-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.server-card {
+  background-color: var(--secondary-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.server-card:hover {
+  border-color: var(--accent-green);
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.1);
+}
+
+.server-card h3 {
+  color: var(--accent-green);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.server-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-rgb);
+  font-family: "Courier New", monospace;
+  word-break: break-all;
+}
+
+/* ===== Discord Section ===== */
+.discord-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--secondary-dark), var(--tertiary-dark));
+  border-radius: 8px;
+  border: 2px solid var(--accent-purple);
+  margin: 3rem 0;
+}
+
+.discord-section h2 {
+  color: var(--accent-purple);
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.discord-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #5865F2, var(--accent-purple));
+  color: white;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.discord-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(88, 101, 242, 0.4);
+}
+
+.discord-button:active {
+  transform: scale(0.95);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: var(--secondary-dark);
+  border-top: 2px solid var(--accent-rgb);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-content p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-link {
+  color: var(--accent-green);
+}
+
+.footer-link:hover {
+  color: var(--accent-rgb);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .game-card {
+    padding: 1.5rem;
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .server-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-header {
+    padding: 1.5rem 0;
+  }
+
+  .game-content {
+    padding: 1.5rem;
+  }
+
+  .discord-section {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .nav-logo a {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .discord-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}

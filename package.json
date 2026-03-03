@@ -1,0 +1,21 @@
+{
+  "name": "sheltered-gaming-site",
+  "version": "1.0.0",
+  "description": "Sheltered Gaming community game server website",
+  "main": ".eleventy.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "keywords": [
+    "gaming",
+    "discord",
+    "game-servers"
+  ],
+  "author": "Sheltered Gaming",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

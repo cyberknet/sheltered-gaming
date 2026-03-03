@@ -1,0 +1,62 @@
+name: Build and Validate
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build site
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "_site" ]; then
+            echo "Build failed: _site directory not created"
+            exit 1
+          fi
+          echo "Build successful!"
+          ls -la _site/
+
+      - name: Check for missing placeholder replacements
+        run: |
+          PLACEHOLDERS=$(grep -r "PLACEHOLDER_" _site/ 2>/dev/null || true)
+          if [ -n "$PLACEHOLDERS" ]; then
+            echo "⚠️ Warning: Found placeholder values in generated HTML:"
+            echo "$PLACEHOLDERS"
+            echo ""
+            echo "Make sure to replace these with actual values in your markdown files:"
+            echo "  - PLACEHOLDER_SERVER_IP - Replace with your actual server IP"
+            echo "  - PLACEHOLDER_SERVER_PORT - Replace with your actual server port"
+          else
+            echo "✓ No placeholder values found"
+          fi
+
+      - name: List generated pages
+        run: |
+          echo "Generated pages:"
+          find _site -name "*.html" -type f | sort

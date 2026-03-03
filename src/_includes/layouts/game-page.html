@@ -1,0 +1,47 @@
+---
+layout: layouts/base.html
+---
+<article class="game-page">
+  <header class="game-header">
+    <h1>{{ title }}</h1>
+    <p class="game-subtitle">{{ description }}</p>
+  </header>
+
+  <div class="game-content">
+    {{ content }}
+  </div>
+
+  <section class="server-info-section">
+    <div class="server-info-grid">
+      {% if serverIp %}
+      <div class="server-card">
+        <h3>Server IP</h3>
+        <p class="server-value">{{ serverIp }}</p>
+      </div>
+      {% endif %}
+
+      {% if serverPort %}
+      <div class="server-card">
+        <h3>Port</h3>
+        <p class="server-value">{{ serverPort }}</p>
+      </div>
+      {% endif %}
+
+      {% if playerCount %}
+      <div class="server-card">
+        <h3>Players Online</h3>
+        <p class="server-value">{{ playerCount }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="discord-section">
+    <h2>Join Our Community</h2>
+    {% if discordInvite %}
+    <a href="{{ discordInvite }}" target="_blank" class="discord-button">Join Discord Server</a>
+    {% else %}
+    <a href="https://discord.gg/shelteredgaming" target="_blank" class="discord-button">Join Discord Server</a>
+    {% endif %}
+  </section>
+</article>

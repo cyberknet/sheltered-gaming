@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} - {% endif %}Sheltered Gaming</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}Sheltered Gaming - Community Game Servers{% endif %}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="/">🎮 Sheltered Gaming</a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/games/rust/" class="nav-link">Rust</a></li>
+        <li><a href="/games/icarus/" class="nav-link">Icarus</a></li>
+        <li><a href="/games/minecraft-java/" class="nav-link">Minecraft Java</a></li>
+        <li><a href="/games/minecraft-bedrock/" class="nav-link">Minecraft Bedrock</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Sheltered Gaming. All rights reserved.</p>
+      <p><a href="https://discord.gg/shelteredgaming" target="_blank" class="footer-link">Join our Discord</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -13,6 +13,13 @@ layout: layouts/base.html
 
   <section class="server-info-section">
     <div class="server-info-grid">
+      {% if serverName %}
+      <div class="server-card">
+        <h3>Server Name</h3>
+        <p class="server-value">{{ serverName }}</p>
+      </div>
+      {% endif %}
+
       {% if serverIp %}
       <div class="server-card">
         <h3>Server IP</h3>
@@ -26,22 +33,12 @@ layout: layouts/base.html
         <p class="server-value">{{ serverPort }}</p>
       </div>
       {% endif %}
-
-      {% if playerCount %}
-      <div class="server-card">
-        <h3>Players Online</h3>
-        <p class="server-value">{{ playerCount }}</p>
-      </div>
-      {% endif %}
     </div>
   </section>
 
   <section class="discord-section">
     <h2>Join Our Community</h2>
-    {% if discordInvite %}
-    <a href="{{ discordInvite }}" target="_blank" class="discord-button">Join Discord Server</a>
-    {% else %}
-    <a href="https://discord.gg/shelteredgaming" target="_blank" class="discord-button">Join Discord Server</a>
-    {% endif %}
+    {% assign inviteUrl = discordInvite | default: site.discordInvite %}
+    <a href="{{ inviteUrl }}" target="_blank" class="discord-button">Join Discord Server</a>
   </section>
 </article>

@@ -3,10 +3,8 @@ layout: layouts/game-page.html
 title: Minecraft Java Server
 description: Build and explore on our Minecraft Java Edition server
 permalink: /games/minecraft-java/
-serverIp: "PLACEHOLDER_SERVER_IP"
-serverPort: "25565"
-playerCount: "Currently Online"
-discordInvite: "https://discord.gg/shelteredgaming"
+serverIp: "mcjava.shelteredgaming.com"
+serverPort: "30011"
 ---
 
 ## About Our Minecraft Java Server

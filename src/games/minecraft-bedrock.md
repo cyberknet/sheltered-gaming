@@ -3,10 +3,8 @@ layout: layouts/game-page.html
 title: Minecraft Bedrock Server
 description: Join our Minecraft Bedrock server with cross-platform support
 permalink: /games/minecraft-bedrock/
-serverIp: "PLACEHOLDER_SERVER_IP"
-serverPort: "19132"
-playerCount: "Currently Online"
-discordInvite: "https://discord.gg/shelteredgaming"
+serverIp: "mcbedrock.shelteredgaming.com"
+serverPort: "30014"
 ---
 
 ## About Our Minecraft Bedrock Server

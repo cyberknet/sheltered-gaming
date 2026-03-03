@@ -3,10 +3,7 @@ layout: layouts/game-page.html
 title: Icarus Server
 description: Explore and survive in our Icarus multiplayer server
 permalink: /games/icarus/
-serverIp: "PLACEHOLDER_SERVER_IP"
-serverPort: "8766"
-playerCount: "Currently Online"
-discordInvite: "https://discord.gg/shelteredgaming"
+serverName: "Sheltered Icarus"
 ---
 
 ## About Our Icarus Server
@@ -22,9 +19,9 @@ Welcome to Sheltered Gaming's Icarus server! Explore a vast wilderness filled wi
 
 ### Getting Started
 
-1. **Install Icarus** from Epic Games Store (it's free!)
+1. **Install Icarus** from Epic Games Store
 2. **Start the game** and select "Multiplayer"
-3. **Add our server** using the IP below
+3. **Search for our server** using the server name below
 4. **Create your character** and join the adventure!
 
 ### Survival Tips

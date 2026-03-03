@@ -6,8 +6,13 @@ permalink: /
 ---
 
 <div class="home-hero">
-  <h1>🎮 Sheltered Gaming</h1>
-  <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">Welcome to Sheltered Gaming, your community for multiplayer game servers</p>
+  <h1>Sheltered Gaming</h1>
+  
+  <p style="font-size: 1.2rem; color: var(--text-secondary);">Sheltered Gaming is a collaborative, PvE-focused gaming community built for players who value teamwork, respect, and progression over toxic competition.<p>
+
+  <p style="font-size: 1.2rem; color: var(--text-secondary);">We host dedicated game servers, encourage cooperative play, and provide a welcoming space where new and veteran players alike can learn, build, and succeed together.</p>
+
+  <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">If you’re looking for a refuge from sweat-driven PvP and a community that actually has your back — welcome home.</p>
 </div>
 
 <section class="home-intro">
@@ -18,7 +23,7 @@ permalink: /
 <div class="games-grid">
   <div class="game-card">
     <h3>🔥 Rust</h3>
-    <p>Survive the harsh Rust environment on our dedicated server. Gather resources, build your base, and compete with other players in intense PvP action.</p>
+    <p>Survive the harsh Rust environment on our dedicated server. Gather resources, build your base, and compete with other players in collaborative PvE action.</p>
     <a href="/games/rust/" class="game-card-link">Visit Server →</a>
   </div>
 
@@ -44,5 +49,5 @@ permalink: /
 <section class="home-footer" style="text-align: center; margin-top: 4rem; padding: 2rem; background-color: var(--secondary-dark); border-radius: 8px;">
   <h2>Ready to Join?</h2>
   <p>Connect with our community on Discord to get started, ask questions, and make new friends.</p>
-  <a href="https://discord.gg/shelteredgaming" target="_blank" class="discord-button" style="margin-top: 1rem;">Join Our Discord</a>
+  <a href="{{ site.discordInvite }}" target="_blank" class="discord-button" style="margin-top: 1rem;">Join Our Discord</a>
 </section>
